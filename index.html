@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>jQuery Move an Element to Left/Right/Up/Down Using Arrow Keys</title>
+<style>
+    .car{
+        width: 97px;
+        height: 210px;
+        position: relative;
+        margin: 200px auto 0;
+        background: url("car.png") ;
+    }
+
+
+    html { 
+        
+
+  background: url(road.jpg)  center center ; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  /* background-repeat: round; */
+  
+
+}
+
+    /* .road
+    {
+        width: 1600px;
+        height: 9000px;
+        background-image: url("road.jpg");
+        background-attachment: fixed;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    } */
+
+</style>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script>
+    
+$(document).keydown(function(e){
+    switch (e.which){
+    case 37:    //left arrow key
+        $(".car").finish().animate({
+            left: "-=50"
+        });
+        break;
+    case 38:    //up arrow key
+        $(".car").finish().animate({
+            top: "-=50"
+        });
+        break;
+    case 39:    //right arrow key
+        $(".car").finish().animate({
+            left: "+=50"
+        });
+        break;
+    case 40:    //bottom arrow key
+        $(".car").finish().animate({
+            top: "+=50"
+        });
+        break;
+    }
+});
+</script>
+</head>
+<body>
+  <div class="road">
+      <div class="car"></div>
+  </div>
+</body>
+</html>                            
